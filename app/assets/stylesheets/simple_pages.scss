@@ -21,7 +21,7 @@ body {
 .page-wrap {
   min-height: 30%;
   /*equal to footer height */
-  margin-bottom: -100px;
+  margin-bottom: -70px;
 }
 
 .page-wrap.after {
@@ -33,12 +33,14 @@ nav {
   font-family: sans-serif;
   padding-right: 5px;
   padding-left: 5px;
+
 }
 
 .navbar-brand {
   font-family: serif;
   font-size: 3em;
-  margin: 3px 3px;
+  position: relative;
+  float: left;
 }
 
 .site-footer, .page-wrap.after {
