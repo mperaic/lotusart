@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="true">
     <title>Lotus</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -8,18 +12,25 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+
   </head>
 
   <body>
     <div class="page-wrap">
-    <nav class="navbar navbar-default">
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
       <div class="container-fluid">
         <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
           <a class="navbar-brand" href="#">Lotus Art Berlin</a>
         </div>
+        <div class="navbar-collapse collapse">
         <ul class="nav navbar-nav navbar-right">
-          <li class="nav-item"><%= link_to "Home", simple_pages_index_path %></li>
+          <li class="nav-item active"><%= link_to "Home", simple_pages_index_path %></li>
           <li class="nav-item"><%= link_to "About", simple_pages_about_path %></li>
           <li class="nav-item"><%= link_to "Contact", simple_pages_contact_path %></li>
         </ul>

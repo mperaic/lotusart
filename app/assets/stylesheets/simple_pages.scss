@@ -6,6 +6,7 @@
 
 * {
   margin: 0;
+  box-sizing: border-box;
 }
 
 html, body {
@@ -14,12 +15,13 @@ html, body {
 
 body {
   background-color: salmon;
+  position: relative;
 }
 
 .page-wrap {
   min-height: 30%;
   /*equal to footer height */
-  margin-bottom: -142px;
+  margin-bottom: -100px;
 }
 
 .page-wrap.after {
@@ -29,11 +31,13 @@ body {
 
 nav {
   font-family: sans-serif;
+  padding-right: 5px;
+  padding-left: 5px;
 }
 
 .navbar-brand {
   font-family: serif;
-  font-size: 4em;
+  font-size: 3em;
   margin: 3px 3px;
 }
 
@@ -42,7 +46,13 @@ nav {
   display: block;
 }
 .site-footer {
-  background: orange;
+  background: RosyBrown;
+  margin-top: 10px;
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  bottom: 0;
+  width: 100%;
 }
 
 footer {
@@ -57,19 +67,25 @@ h1 {
   font-family: serif;
   color: teal;
   text-align: center;
+  padding-top: 80px;
 }
 
 h2 {
   text-align: center;
 }
 
+.img-responsive my-image {
+  max-width: 100%;
+}
+
 // About
 
 p {
   text-align: center;
+  padding-top: 150px;
 }
-// Contact
 
-p {
-  text-align: center;
-}
+
+
+
+// Contact
