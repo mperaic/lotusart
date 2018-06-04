@@ -3,19 +3,21 @@
 <h1>Products</h1>
 <div class="container" id="heading">
   <div class="row">
-    <div class="col-xs-3">Name</div>
-    <div class="col-xs-3">Description</div>
-    <div class="col-xs-3">Image Url</div>
-    <div class="col-xs-3">Colour</div>
+    <div class="col-sm-2-md-4">Name</div>
+    <div class="col-sm-2-md-4">Description</div>
+    <div class="col-sm-2-md-4">Image Url</div>
+    <div class="col-sm-2-md-4">Colour</div>
+    <div class="col-sm-2-md-4">Price</div>
   </div>
 </div>
 <div class="container">
-    <% @products.each do |product| %>
     <div class="row">
-        <div class="col-xs-3"><%= product.name %></div>
-        <div class="col-xs-3"><%= product.description %></div>
-        <div class="col-xs-3"><%= product.image_url %></div>
-        <div class="col-xs-3"><%= product.colour %></div>
+      <% @products.each do |product| %>
+        <div class="col-sm-2-md-4"><%= product.name %></div>
+        <div class="col-sm-2-md-4"><%= product.description %></div>
+        <div class="col-sm-2-md-4"><%= image_tag(product.image_url, class: "img-responsive") if product.image_url %></div>
+        <div class="col-sm-2-md-4"><%= product.colour %></div>
+        <div class="col-sm-2-md-4"><%= product.price %></div>
     </div>
     <table>
         <td><%= link_to 'Show', product %></td>
