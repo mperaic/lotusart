@@ -13,11 +13,8 @@
 <div class="container">
     <div class="row">
       <% @products.each do |product| %>
-        <div class="col-sm-2-md-4"><%= product.name %></div>
-        <div class="col-sm-2-md-4"><%= product.description %></div>
-        <div class="col-sm-2-md-4"><%= image_tag(product.image_url, class: "img-responsive") if product.image_url %></div>
-        <div class="col-sm-2-md-4"><%= product.colour %></div>
-        <div class="col-sm-2-md-4"><%= product.price %></div>
+      <%= render @products %>
+
     </div>
     <table>
         <td><%= link_to 'Show', product %></td>
