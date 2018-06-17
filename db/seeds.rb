@@ -5,14 +5,4 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-Product.create(name: "mandala postcard 1", description: "original handmade artwork 10x15cm 300gsm paper")
-
-Product.create(name: "mandala postcard 2", description: "original handmade artwork 10x15cm 300gsm paper")
-
-Product.create(name: "mandala postcard 3", description: "original handmade artwork 10x15cm 300gsm paper")
-
-Product.create(name: "mandala postcard 4", description: "original handmade artwork 10x15cm 300gsm paper")
-
-Product.create(name: "mandala postcard 5", description: "original handmade artwork 10x15cm 300gsm paper")
-
-Product.create(name: "mandala postcard 6", description: "original handmade artwork 10x15cm 300gsm paper")
+Product.create(name: "seed-generated product", description: "I also created this product without using the HTML form!")
