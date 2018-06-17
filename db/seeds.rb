@@ -5,4 +5,6 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-Product.create(name: "seed-generated product", description: "I also created this product without using the HTML form!")
+Product.create(name: "mandala art", description: "original mandala art", image_url: "http://clipground.com/images/mandalas-clipart-1.png")
+
+Product.create(name: "mandala art", description: "original mandala art", image_url: "https://m.media-amazon.com/images/S/aplus-media/vc/ca4e4ec3-9180-446e-b4be-03f3911bfaf9.jpg")
