@@ -1,11 +1,15 @@
 <div class="container-fluid">
   <div class="row">
-    <% @products.each do |product| %>
+
       <div class="col-sm-2 col-md-4">
         <h1><%= link_to product.name, product %></h1>
           <p><%= product.description %></p>
         <strong>$ <%= product.price %></strong>
       </div><!-- /col -->
-      <% end %>
+      <table>
+          <td><%= link_to 'Show', product %></td>
+          <td><%= link_to 'Edit', edit_product_path(product) %></td>
+          <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </table>
     </div>
 </div>
