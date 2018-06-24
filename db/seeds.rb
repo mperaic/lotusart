@@ -5,7 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-
-
+Product.create(name: "mandala art 1", description: "original handpainted art", image_url: "https://mymodernmet.com/wp/wp-content/uploads/2017/12/mandala-art-ana-art-studio-4.jpg")
+Product.create(name: "mandala art 2", description: "original handpainted art", image_url: "https://mymodernmet.com/wp/wp-content/uploads/2017/12/mandala-art-ana-art-studio-4.jpg")
 Order.create(user_id: 1, product_id: 1, total: 10.0)
 Order.create(user_id: 1, product_id: 2, total: 5.0)
