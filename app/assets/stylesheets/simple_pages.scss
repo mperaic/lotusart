@@ -37,8 +37,8 @@ nav {
 
 .navbar-brand {
   font-family: serif;
-  font-size: 3em;
-  position: relative;
+  font-size: 2.7em;
+  position: fixed;
   float: left;
 }
 
@@ -65,6 +65,15 @@ ul li:hover {
 
 footer {
   text-align: center;
+}
+
+
+// Landing page
+
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
+    width: 70%;
+    margin: auto;
 }
 
 // Index
