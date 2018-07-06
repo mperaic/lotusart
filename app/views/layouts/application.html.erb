@@ -28,7 +28,6 @@
           </button>
           <a class="navbar-brand" href="<%= simple_pages_index_path %>">Lotus Art Berlin</a>
         </div>
-
         <div class="collapse navbar-collapse">
         <ul class="nav navbar-nav navbar-right">
           <li><%= link_to "Home", simple_pages_index_path %></li>
@@ -36,22 +35,22 @@
           <li><%= link_to "Products", products_path %></li>
           <li><%= link_to "Orders", orders_path %></li>
           <li><%= link_to "Contact", simple_pages_contact_path %></li>
+          <li>
+            <form class="navbar-form" role="search">
+              <%= form_with(url: products_path, method: 'get', local: true) do |form| %>
+              <%= form.label :q, 'Search for:' %>
+              <div class="form-group">
+                <%= form.text_field :q, id: 'q', value: params[:q] %>
+              </div>
+              <div class="btn btn-link">
+                <%= form.submit 'Search' %>
+              </div>
+                <% end %>
+            </form>
+          </li>
         </ul>
-
       </div>
     </div>
-
-    <form class="navbar-form navbar-right" role="search">
-      <%= form_with(url: products_path, method: 'get', local: true) do |form| %>
-      <%= form.label :q, 'Search for:' %>
-      <div class="form-group">
-        <%= form.text_field :q, id: 'q', value: params[:q] %>
-      </div>
-      <div class="btn btn-link">
-        <%= form.submit 'Search' %>
-      </div>
-        <% end %>
-    </form>
     </nav>
 
     <%= yield %>
