@@ -1,6 +1,10 @@
-<h1>Editing User</h1>
+<div class="container">
+  <div class="sticky-top">
+    <h1>Editing User</h1>
+    <%= render 'form', user: @user %>
+    <%= link_to 'Edit password', edit_user_registration_path, class: 'btn btn-danger red' %><br>
+    <%= link_to 'Show', @user %> |
+    <%= link_to 'Back', users_path %>
 
-<%= render 'form', user: @user %>
-
-<%= link_to 'Show', @user %> |
-<%= link_to 'Back', users_path %>
+  </div>
+</div>
