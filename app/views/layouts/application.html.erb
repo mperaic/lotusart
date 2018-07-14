@@ -38,9 +38,8 @@
           <li>
             <form class="navbar-form" role="search">
               <%= form_with(url: products_path, method: 'get', local: true) do |form| %>
-              <%= form.label :q, 'Search for:' %>
               <div class="form-group">
-                <%= form.text_field :q, id: 'q', value: params[:q] %>
+              <%= form.text_field :q, id: 'q', value: params[:q] %>
               </div>
               <div class="btn btn-link">
                 <%= form.submit 'Search' %>
