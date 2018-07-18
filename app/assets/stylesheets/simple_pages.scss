@@ -99,13 +99,14 @@ h2 {
 
 .img-responsive {
   max-width: 100%;
+  display: inline-block;
 }
 
 // About
 
 p {
   text-align: center;
-  padding-top: 160px;
+
 }
 
 // Contact
