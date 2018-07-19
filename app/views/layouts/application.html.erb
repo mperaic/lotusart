@@ -36,16 +36,16 @@
           <li><%= link_to "Orders", orders_path %></li>
           <li><%= link_to "Contact", simple_pages_contact_path %></li>
           <li>
-            <form class="navbar-form" role="search">
+            <div class="navbar-form" role="search">
               <%= form_with(url: products_path, method: 'get', local: true) do |form| %>
 
               <%= form.text_field :q, id: 'q', value: params[:q] %>
-              
+
               <div class="btn btn-link">
                 <%= form.submit 'Search' %>
               </div>
                 <% end %>
-            </form>
+            </div>
           </li>
             <% if user_signed_in? %>
             <li class="nav-item">
