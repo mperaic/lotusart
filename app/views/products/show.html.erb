@@ -25,6 +25,12 @@
         <%= @product.price %>
       </p>
 
+      <!-- Stripe payments -->
+      <%= form_tag(url: '/payments/create') do |f| %>
+        <%= render partial: "shared/stripe_checkout_button" %>
+        <%= hidden_field_tag(:product_id, @product.id) %>
+      <% end %>
+
     <div class="container-fluid">
       <p>Average Rating:
         <div class="rated" data-score="<%= @product.average_rating %>">
