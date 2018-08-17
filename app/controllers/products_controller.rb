@@ -20,6 +20,7 @@ end
 
   # GET /products/new
   def new
+    byebug
     @product = Product.new
   end
 
