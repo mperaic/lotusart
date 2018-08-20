@@ -25,6 +25,7 @@
         <%= @product.price %>
       </p>
 
+      <p>Average Rating: <div id="average-rating" class="rated" data-score="<%= @product.average_rating %>"></div> </p>
       <div class="pay-button">
       <!-- Stripe payments -->
       <%= form_tag "/payments/create" do %>
@@ -32,12 +33,7 @@
         <%= hidden_field_tag(:product_id, @product.id) %>
       <% end %>
       <div>
-    <div class="container-fluid">
-      <p>Average Rating:
-        <div class="rated" data-score="<%= @product.average_rating %>">
-        </div>
-      </p>
-    </div>
+    
 <%= render 'new_comment' %>
 <%= render 'comments' %>
 
