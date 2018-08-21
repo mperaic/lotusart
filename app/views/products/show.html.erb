@@ -1,46 +1,37 @@
 <div class="container">
   <div class="show-product">
     <div class="thumbnail">
-      <p>
-        <strong>Name:</strong>
-        <%= @product.name %>
-      </p>
+      
+      <p><strong>Name:</strong>
+        <%= @product.name %></p>
 
-      <p>
-        <strong>Description:</strong>
-        <%= @product.description %>
-      </p>
+      <p><strong>Description:</strong>
+        <%= @product.description %></p>
 
-      <p>
-        <%= image_tag(@product.image_url, class: "img-responsive show-photo img-zoom", data_zoom_image: "@product.product_image.url")%>
-      </p>
+      <p><%= image_tag(@product.image_url, class: "img-responsive show-photo img-zoom", data_zoom_image: "@product.product_image.url")%></p>
 
-      <p>
-        <strong>Colour:</strong>
-        <%= @product.colour %>
-      </p>
+      <p><strong>Colour:</strong>
+        <%= @product.colour %></p>
 
-      <p>
-        <strong>Price:</strong>
-        <%= @product.price %>
-      </p>
+      <p><strong>Price:</strong>
+        <%= @product.price %></p>
+
 
       <p>Average Rating: <div id="average-rating" class="rated" data-score="<%= @product.average_rating %>"></div> </p>
-      <div class="pay-button">
-        
+  <div class="pay-button">
       <!-- Stripe payments -->
       <%= form_tag "/payments/create" do %>
         <%= render partial: "shared/stripe_checkout_button" %>
         <%= hidden_field_tag(:product_id, @product.id) %>
       <% end %>
+
       <div>
+        <%= render 'new_comment' %>
+        <%= render 'comments' %>
+      </div>
 
-<%= render 'new_comment' %>
-<%= render 'comments' %>
-
-    </div>
-<%= link_to 'Edit', edit_product_path(@product) %> |
-<%= link_to 'Back', products_path %>
+    <%= link_to 'Edit', edit_product_path(@product) %> |
+    <%= link_to 'Back', products_path %>
   </div>
 
 </div>
