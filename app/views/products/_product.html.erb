@@ -4,11 +4,8 @@
     <%= image_tag(product.image_url, class: "img-responsive") if product.image_url%>
     <% end %>
 
-    <% cache product do %>
     <p><strong>Product name:</strong><p><%= product.name %></p></p>
     <p><strong>Details:</strong><p><%= product.description %></p></p>
-    <p><strong>Photo:</strong><p><%= product.image_url %></p></p>
-    <p><strong>Color:</strong><p><%= product.colour %></p></p>
     <p><strong>Price €:</strong><p><%= product.price %></p></p>
   </div>
 
@@ -17,5 +14,4 @@
     <p><%= link_to 'Edit', edit_product_path(product) %></p>
     <p><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></p>
   </div>
-  <% end %>
 </div>

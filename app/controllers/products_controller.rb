@@ -10,6 +10,10 @@ class ProductsController < ApplicationController
     else
       @products = Product.all
     end
+
+    @products = Rails.cache.fetch('products', expires_in: 5.minutes){
+      Product.all }
+    
   end
 
   # GET /products/1
