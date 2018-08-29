@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="show-product">
+  <div class="show-product" data-product-id="<%= @product.id %>">
     <div class="thumbnail">
     <% cache @product do %>
       <p><strong>Name:</strong>
@@ -35,5 +35,7 @@
     <%= link_to 'Back', products_path %>
   </div>
 
+</div>
+</div>
 </div>
 <%= will_paginate @comments %>
