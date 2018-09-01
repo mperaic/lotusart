@@ -6,9 +6,9 @@ describe Product do
     let(:user) { User.create!(email: "mperaic@gmail.com", password: "Perazhica")}
 
   before do
-    product.comments.create!(rating: 1, user: user, body: "Awful bike!")
-    product.comments.create!(rating: 3, user: user, body: "Ok bike!")
-    product.comments.create!(rating: 5, user: user, body: "Great bike!")
+    product.comments.create!(rating: 1, user: user, body: "Awful!")
+    product.comments.create!(rating: 3, user: user, body: "Ok!")
+    product.comments.create!(rating: 5, user: user, body: "Great!")
   end
 
   it "returns the average rating of all comments" do
@@ -18,5 +18,13 @@ describe Product do
   it "is not valid without a name" do
     expect(Product.new(description: "Nice painting")).not_to be_valid
   end
-end
+
+  it "returns the lowest rating of all comments" do
+      expect(product.lowest_rating_comment). to be_valid
+    end
+
+    it "returns the highest rating of all comments" do
+      expect(product.highest_rating_comment == 3.0). to be false
+    end
+  end
 end

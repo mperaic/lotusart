@@ -1,5 +1,6 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, :except => [:index]
 
   # GET /products
   # GET /products.json
@@ -11,20 +12,16 @@ class ProductsController < ApplicationController
       @products = Product.all
     end
 
-    @products = Rails.cache.fetch('products', expires_in: 5.minutes){
-      Product.all }
-    
   end
 
   # GET /products/1
-# GET /products/1.json
-def show
-  @comments = @product.comments.order("created_at DESC").paginate(page: params[:page], per_page: 3)
-end
+  # GET /products/1.json
+  def show
+    @comments = @product.comments.order("created_at DESC").paginate(page: params[:page], per_page: 3)
+  end
 
   # GET /products/new
   def new
-    byebug
     @product = Product.new
   end
 
@@ -55,7 +52,7 @@ end
     respond_to do |format|
       if @product.update(product_params)
         format.html { redirect_to @product, notice: 'Product was successfully updated.' }
-        format.json { render :show, status: :ok, location: @product }
+        format.json { render :show, status: :ok, location: '/simple_pages/index' }
       else
         format.html { render :edit }
         format.json { render json: @product.errors, status: :unprocessable_entity }
