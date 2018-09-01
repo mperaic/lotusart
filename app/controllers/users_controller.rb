@@ -1,11 +1,15 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, except: [:show, :index]
+  before_action :authenticate_user!
   load_and_authorize_resource
   # GET /users
   # GET /users.json
   def index
-    @users = User.all
+    if current_user.admin?
+      @users = User.all
+    else
+        @user = User.all
+      end
   end
 
   # GET /users/1
@@ -15,7 +19,11 @@ class UsersController < ApplicationController
 
   # GET /users/new
   def new
-    @user = User.new
+    if current_user.admin?
+      @user = User.new
+    else
+      redirect_to :root, notice: 'The page you tried to reach is for admin only.'
+    end
   end
 
   # GET /users/1/edit
