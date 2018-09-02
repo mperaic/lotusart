@@ -1,7 +1,7 @@
 <div class="container">
   <div class="show-product" data-product-id="<%= @product.id %>">
     <div class="thumbnail">
-    <% cache @product do %>
+    <%# cache @product do %>
       <p><strong>Name:</strong>
         <%= @product.name %></p>
 
@@ -10,12 +10,9 @@
 
       <p><%= image_tag(@product.image_url, class: "img-responsive show-photo img-zoom", data_zoom_image: "@product.product_image.url")%></p>
 
-      <p><strong>Colour:</strong>
-        <%= @product.colour %></p>
-
-      <p><strong>Price:</strong>
+        <p><strong>Price:</strong>
         <%= @product.price %></p>
-<% end %>
+<%# end %>
 
       <p>Average Rating: <div id="average-rating" class="rated" data-score="<%= @product.average_rating %>"></div> </p>
   <div class="pay-button">
@@ -31,11 +28,13 @@
         <%= render 'comments' %>
       </div>
 
-    <%= link_to 'Edit', edit_product_path(@product) %> |
-    <%= link_to 'Back', products_path %>
   </div>
 
 </div>
+<% if signed_in? && current_user.admin? %>
+<%= link_to 'Edit', edit_product_path(@product) %> |
+<%= link_to 'Back', products_path %>
+<% end %>
 </div>
 </div>
 <%= will_paginate @comments %>

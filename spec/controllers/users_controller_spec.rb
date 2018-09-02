@@ -31,9 +31,9 @@ require 'rails_helper'
      context 'when a user is not logged in' do
       it 'redirects home' do
         get :show, params: {id: @user.id}
-        expect(response).to redirect_to(root_path)
+        expect(response).to redirect_to new_user_session_path
       end
     end
   end
-  
+
  end
