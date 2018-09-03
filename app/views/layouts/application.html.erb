@@ -12,9 +12,7 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-
   </head>
-
   <body>
     <div class="page-wrap">
     <nav class="navbar navbar-default navbar-fixed-top">
@@ -38,9 +36,7 @@
           <li>
             <div class="navbar-form" role="search">
               <%= form_with(url: products_path, method: 'get', local: true) do |form| %>
-
               <%= form.text_field :q, id: 'q', value: params[:q] %>
-
               <div class="btn btn-link">
                 <%= form.submit 'Search' %>
               </div>
@@ -66,12 +62,11 @@
     <% end %>
     <% if alert %>
     <p id="alert" class="alert alert-primary"><%= alert %></p>
-<% end %>
+    <% end %>
     <%= yield %>
   </div><!-- end page-wrap-->
     <footer class="site-footer">
       &copy; 2018 Lotus Berlin
     </footer>
-
   </body>
 </html>
