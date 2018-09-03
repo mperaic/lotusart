@@ -5,7 +5,7 @@ class CommentsController < ApplicationController
     @comment = @product.comments.new(comment_params)
     @comment.user = current_user
     @user = current_user
-    
+
     respond_to do |format|
       if @comment.save
         ProductChannel.broadcast_to @product.id, comment: CommentsController.render(partial: 'comments/comment', locals: {comment: @comment, current_user: current_user}), average_rating: @product.average_rating

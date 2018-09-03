@@ -2,3 +2,6 @@
   <% cache(cache_key_for_products) do %>
   <%= render @products %>
 <% end %>
+<% if @products.blank? %>
+  <h4>There are no products containing this term. <%= params[:search] %></h4>
+<% end %>

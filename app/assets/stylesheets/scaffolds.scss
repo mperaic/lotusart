@@ -5,6 +5,7 @@ body {
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
+
 }
 
 p, ol, ul, td {
@@ -81,4 +82,8 @@ div {
 
 label {
   display: block;
+}
+
+.col-md-3 {
+  padding-bottom: 50px;
 }
