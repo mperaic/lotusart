@@ -11,8 +11,7 @@
 
 html, body {
   height: 100%;
-  width: 100%;
-}
+  }
 
 body {
   background-color: salmon;
@@ -20,14 +19,15 @@ body {
 }
 
 .page-wrap {
-  min-height: 10%;
+	min-height: 100%;
+	margin-bottom: -30px;
   /*equal to footer height */
-  margin-bottom: -50px;
-}
+  }
 
-.page-wrap.after {
+.page-wrap:after {
   content: "";
   display: block;
+	height: 30px;
 }
 
 nav {
@@ -62,8 +62,7 @@ ul li:hover {
 
 .site-footer {
   background: RosyBrown;
-  height: 50px;
-  margin-top: 10px;
+	height: 30px;
   text-align: center;
   padding-top: 10px;
   padding-bottom: 10px;
